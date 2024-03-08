@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>ZSVC: Zero-shot Style Voice Conversion with Latent Diffusion Models</title>
+  <title>Boosting Multi-Speaker Expressive Speech Synthesis with Semi-supervised Contrastive Learning</title>
   <meta name="generator" content="Jekyll v3.9.0">
   <meta property="og:title" content="TODO: title">
   <meta property="og:locale" content="en_US">
@@ -69,7 +69,8 @@
     <div class="image-container">
       <div class="image-box">
         <img src="fig/zsvc_overview.drawio.png" width="30%" alt="描述图片的文字1">
-        <p>Figure 1: Overall framework of the proposed method. 'IC' means in-context learning through speech prompting mechanism.</p>
+        <p>Figure 1: Overall framework of the proposed method. 'IC' means in-context learning through speech prompting
+          mechanism.</p>
       </div>
     </div>
     <div class="image-container">
@@ -78,7 +79,7 @@
         <p>Figure 2: The detailed architecture of proposed ZSVC. The dashed line means only available in training.</p>
       </div>
     </div>
-      <!-- <div class="image-box">
+    <!-- <div class="image-box">
         <img src="fig/zsvc_details.drawio.png" width="100%" alt="描述图片的文字2">
         <p>The detailed architecture of proposed ZSVC. The dashed line means only available in training.</p>
       </div>
@@ -86,17 +87,16 @@
     <br><br>
 
 
-    <h2>2. Demos -- zero-shot style voice for arbitrary speakers<a
-        name="prediction"></a></h2>
+    <h2>2. Demos -- zero-shot style voice for arbitrary speakers<a name="prediction"></a></h2>
     <!-- <h3>Convert the emotion and style expresssions from different source speakers to the neutral target speakers without
-      emotional and stylistic training data.</h3>
+      emotional and stylistic training data.</h3> -->
 
-    <p><b>Chinese speaker: F1 </b></p> -->
+    <p><b>Part 1. Source speech</b><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""
+        ></audio></p>
 
     <table>
       <thead>
         <tr>
-          <th style="text-align: center"><strong>Source speech</strong></th>
           <th style="text-align: center"><strong>Style prompt</strong></th>
           <th style="text-align: center"><strong>LGVC</strong></th>
           <th style="text-align: center"><strong>StyleVC</strong></th>
@@ -105,370 +105,494 @@
       </thead>
       <tbody>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/2_2_42.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_2_2_42.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/8_0_10.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_8_0_10.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_8_0_10.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_0_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_0_anger_309-336_0332.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_0_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_0_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_gst/norm_denoised_0_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_0_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/propose_zsvc/norm_denoised_0_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
+    <p><b>Part 2. Source speech</b><audio src="samples/source speech/norm_denoised_11.wav" controls=""
+        preload=""></audio></p>
+    <table>
+      <thead>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_11.wav" controls="" preload=""></audio>
-          </td>
+          <th style="text-align: center"><strong>Style prompt</strong></th>
+          <th style="text-align: center"><strong>LGVC</strong></th>
+          <th style="text-align: center"><strong>StyleVC</strong></th>
+          <th style="text-align: center"><strong>ZSVC</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_0_0_6.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_11.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/2_2_42.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_2_2_42.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_11.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/8_0_10.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_8_0_10.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_8_0_10.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_11.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_11.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_11_F-sad_0015_001063.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_11.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_11_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_40.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_0_0_6.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_0_0_6.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_40.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/2_2_42.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_11_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_11_anger_309-336_0332.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_2_2_42.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_2_2_42.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_40.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/8_0_10.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_8_0_10.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_8_0_10.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_11_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_40.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_gst/norm_denoised_11_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_11_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_40.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/propose_zsvc/norm_denoised_11_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_40.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
+      </tbody>
+    </table>
 
+    <p><b>Part 3. Source speech</b><audio src="samples/source speech/norm_denoised_40.wav" controls=""
+        preload=""></audio></p>
+    <table>
+      <thead>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_30.wav" controls="" preload=""></audio>
-          </td>
+          <th style="text-align: center"><strong>Style prompt</strong></th>
+          <th style="text-align: center"><strong>LGVC</strong></th>
+          <th style="text-align: center"><strong>StyleVC</strong></th>
+          <th style="text-align: center"><strong>ZSVC</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_0_0_6.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_0_0_6.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_30.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/2_2_42.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_2_2_42.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_30.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/8_0_10.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_40_8_0_10.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_8_0_10.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_30.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_30.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_40_F-sad_0015_001063.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_30.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_60.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_0_0_6.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_0_0_6.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_0_0_6.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_60.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls=""
+              preload=""></audio>
           </td>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_40_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_40_anger_309-336_0332.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_40_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_gst/norm_denoised_40_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_40_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/propose_zsvc/norm_denoised_40_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+    <p><b>Part 4. Source speech</b><audio src="samples/source speech/norm_denoised_30.wav" controls=""
+        preload=""></audio></p>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>Style prompt</strong></th>
+          <th style="text-align: center"><strong>LGVC</strong></th>
+          <th style="text-align: center"><strong>StyleVC</strong></th>
+          <th style="text-align: center"><strong>ZSVC</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
+        </td>
+        <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_0_0_6.wav_0.wav" controls=""
+            preload=""></audio>
+        </td>
+        <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_0_0_6.wav_0.wav" controls=""
+            preload=""></audio>
+        </td>
+        <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_0_0_6.wav_0.wav" controls=""
+            preload=""></audio>
+        </td>
+        </tr>
+        <tr>
           <td style="text-align: left"><audio src="samples/prompt speech/2_2_42.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_2_2_42.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_2_2_42.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_60.wav" controls="" preload=""></audio>
-          </td>
           <td style="text-align: left"><audio src="samples/prompt speech/8_0_10.wav" controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_8_0_10.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_30_8_0_10.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_8_0_10.wav_0.wav" controls="" preload=""></audio>
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_60.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_F-sad_0015_001063.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_60.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_30_F-sad_0015_001063.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_anger_309-336_0332.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/source speech/norm_denoised_60.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_30_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_30_anger_309-336_0332.wav_0.wav" controls=""
+              preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
-          </td>
-          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_sleepiness_477-504_0479.wav_0.wav" controls="" preload=""></audio>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_30_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
           </td>
         </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_gst/norm_denoised_30_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_30_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/propose_zsvc/norm_denoised_30_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
 
+      </tbody>
+    </table>
+
+    <p><b>Part 5. Source speech</b><audio src="samples/source speech/norm_denoised_60.wav" controls=""
+        preload=""></audio></p>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>Style prompt</strong></th>
+          <th style="text-align: center"><strong>LGVC</strong></th>
+          <th style="text-align: center"><strong>StyleVC</strong></th>
+          <th style="text-align: center"><strong>ZSVC</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <td style="text-align: left"><audio src="samples/prompt speech/0_0_6.wav" controls="" preload=""></audio>
+        </td>
+        <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_0_0_6.wav_0.wav" controls=""
+            preload=""></audio>
+        </td>
+        <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_0_0_6.wav_0.wav" controls=""
+            preload=""></audio>
+        </td>
+        <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_0_0_6.wav_0.wav" controls=""
+            preload=""></audio>
+        </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/2_2_42.wav" controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_2_2_42.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_2_2_42.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/8_0_10.wav" controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/baseline_stylevc/norm_denoised_60_8_0_10.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_8_0_10.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/F-sad_0015_001063.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_60_F-sad_0015_001063.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_F-sad_0015_001063.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/anger_309-336_0332.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/baseline_gst/norm_denoised_60_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_60_anger_309-336_0332.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/propose_zsvc/norm_denoised_60_anger_309-336_0332.wav_0.wav"
+              controls="" preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/prompt speech/sleepiness_477-504_0479.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_gst/norm_denoised_60_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/baseline_stylevc/norm_denoised_60_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio
+              src="samples/propose_zsvc/norm_denoised_60_sleepiness_477-504_0479.wav_0.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
       </tbody>
     </table>
 

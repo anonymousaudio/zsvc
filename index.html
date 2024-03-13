@@ -50,9 +50,9 @@
 
     <br><br>
     <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-    <p> Style voice conversion aims to transform the speaking style of source speech into a desired style and keep the
-      original speaker's identity. However, current style voice conversion approaches either simultaneously convert
-      speaking style and speaker timbre or focus solely on speaker timbre, limiting their practical applications.
+    <p> Style voice conversion aims to transform the speaking style of source speech into a desired style while keeping
+      the original speaker's identity. However, previous style voice conversion approaches primarily focus on
+      well-defined domains such as emotional aspects, limiting their practical applications.
       In this study, we present ZSVC, a novel Zero-shot Style Voice Conversion approach that utilizes a speech codec and
       a latent diffusion model with speech prompting mechanism to facilitate in-context learning for speaking style
       conversion.
@@ -61,15 +61,15 @@
       timbre in the style prompt.
       Moreover, we propose a novel adversarial training strategy to enhance in-context learning and improve style
       similarity.
-      Experiments on 44,000 hours of speech underscore ZSVC's superiority in generating speech with diverse speaking
-      styles in zero-shot scenarios.
+      Experiments conducted on 44,000 hours of speech data demonstrate the superior performance of ZSVC in generating
+      speech with diverse speaking styles in zero-shot scenarios.
     </p>
     <!-- <center><img src='fig/ssl0102_00.jpg' width="50%"><img src='fig/zsvc_overview.drawio.png' width="40%"></center> -->
 
     <div class="image-container">
       <div class="image-box">
         <img src="fig/zsvc_overview.drawio.png" width="30%" alt="描述图片的文字1">
-        <p>Figure 1: Overall framework of the proposed method. 'IC' means in-context learning through speech prompting
+        <p>Figure 1: Overall framework of proposed ZSVC. 'IC' means in-context learning through speech prompting
           mechanism.</p>
       </div>
     </div>
